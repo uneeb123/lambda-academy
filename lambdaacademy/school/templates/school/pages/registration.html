@@ -1,0 +1,99 @@
+{% extends 'school/pages/base.html' %}
+
+{% block content %}
+
+<div class="jumbotron register-jumbotron container">
+
+<div>
+
+	<form method="post">
+		
+		{% csrf_token %}
+
+		{{ form.non_field_errors }}
+		
+		<div class="fieldWrapper row">
+			{{ form.course_registered.errors }}
+			<div class="col-md-3"> 
+				<p class="register-labels">{{ form.course_registered.label_tag }}</p> 
+			</div>
+			<div class="col-md-9">
+				<p class="lead register-text">{{ form.course_registered }}</p>
+			</div>
+		</div>
+
+		<div class="fieldWrapper row">
+			{{ form.f_name.errors }}
+			<div class="col-md-3"> 
+				<p class="register-labels">{{ form.f_name.label_tag }}</p> 
+			</div>
+			<div class="col-md-9">
+				<p class="lead register-text">{{ form.f_name }}</p>
+			</div>
+		</div>
+
+		<div class="fieldWrapper row">
+			{{ form.l_name.errors }}
+			<div class="col-md-3"> 
+				<p class="register-labels">{{ form.l_name.label_tag }}</p> 
+			</div>
+			<div class="col-md-9">
+				<p class="lead register-text">{{ form.l_name }}</p>
+			</div>
+		</div>
+
+		<div class="fieldWrapper row">
+			{{ form.email.errors }}
+			<div class="col-md-3"> 
+				<p class="register-labels">{{ form.email.label_tag }}</p> 
+			</div>
+			<div class="col-md-9">
+				<p class="lead register-text">{{ form.email }}</p>
+			</div>
+		</div>
+
+		<div class="fieldWrapper row">
+			{{ form.contact_number.errors }}
+			<div class="col-md-3"> 
+				<p class="register-labels">{{ form.contact_number.label_tag }}</p> 
+			</div>
+			<div class="col-md-9">
+				<p class="lead register-text">{{ form.contact_number }}</p>
+			</div>
+		</div>
+
+		<div class="fieldWrapper row">
+			{{ form.best_suited_time.errors }}
+			<div class="col-md-3"> 
+				<p class="register-labels">{{ form.best_suited_time.label_tag }}</p> 
+			</div>
+			<div class="col-md-9">
+				{{ form.best_suited_time }}
+			</div>
+		</div>
+
+		<div class="fieldWrapper row">
+			{{ form.comment.errors }}
+			<div class="col-md-3"> 
+				<p class="register-labels">{{ form.comment.label_tag }}</p> 
+			</div>
+			<div class="col-md-9">
+				<p class="lead register-text">{{ form.comment }}</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-9">
+				<input class="btn btn-primary register-labels" type="submit" value="Submit" />
+			</div>
+
+	</form>
+
+
+</div>
+
+</div><!-- /.container -->
+
+
+{% endblock %}

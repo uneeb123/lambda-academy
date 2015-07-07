@@ -1,0 +1,78 @@
+{% extends 'school/pages/base.html' %}
+
+{% block content %}
+
+<div class="jumbotron register-jumbotron container">
+
+<div>
+	<h2 class="register-header">{{ module.name }}</h3>
+	
+	<br>
+	<br>
+
+	<!-- Description -->
+	<div class="row">
+		<div class="col-md-3">
+			<p class="detail-labels">description:</p>
+		</div>
+		<div class="col-md-9">
+			<p class="lead detail-text">
+				{{ module.description }}
+			</p>
+		</div>
+	</div>
+
+	<!-- Registration deadline -->
+	<div class="row">
+		<div class="col-md-3">
+			<p class="detail-labels">registration deadline:</p>
+		</div>
+		<div class="col-md-9">
+			<p class="lead detail-text">
+				{{ module.registration_deadline }}
+			</p>
+		</div>
+	</div>
+
+	<!-- Max participants -->
+	<div class="row">
+		<div class="col-md-3">
+			<p class="detail-labels">maximum participants:</p>
+		</div>
+		<div class="col-md-9">
+			<p class="lead detail-text">
+				{{ module.max_participants }}
+			</p>
+		</div>
+	</div>
+
+	<!-- Number of days -->
+	<div class="row">
+		<div class="col-md-3">
+			<p class="detail-labels">total number of days:</p>
+		</div>
+		<div class="col-md-9">
+			<p class="lead detail-text">
+				{{ module.number_of_days }}
+			</p>
+		</div>
+	</div>
+
+	<br/>
+
+	<div class="btn-wrap">
+		{% if availability %}
+		<p class="green-register">There are {{ num_of_seats }} seats left.</p>
+		{% else %}
+		<p class="red-register">There are no more seats left. If you register you will be waitlisted.</p>
+		{% endif %}
+
+		<p><a class="btn btn-primary" href="/register/{{ module.id }}" role="button">Register</a></p>
+
+	</div>
+</div>
+
+</div><!-- /.container -->
+
+
+{% endblock %}
