@@ -1,0 +1,1 @@
+web: gunicorn lambdaacademy.wsgi --log-file -
