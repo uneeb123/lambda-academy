@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'school',
+    'storages',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -126,3 +127,15 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
 
+
+##################################### AWS ########################################
+
+AWS_STORAGE_BUCKET_NAME = 'lambda-academy'
+AWS_ACCESS_KEY_ID = 'AKIAJI6CPKPGCVTX2ULQ'
+AWS_SECRET_ACCESS_KEY = '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'
+
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+MEDIAFILES_LOCATION = 'media'
+MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
